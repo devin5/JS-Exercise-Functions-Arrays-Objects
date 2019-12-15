@@ -60,7 +60,7 @@ function makePersonObject(id, name, email) {
  * the returned value should look like `Hello, my name is Leia`.
  */
 function getName(obj) {
-  return `Hello, my name is ${obj.name}.`;
+  return `Hello, my name is ${obj.name}`;
 }
 
 /**
@@ -115,10 +115,11 @@ var inventory = [
  * NOTE: This example has been completed for you.
  **/
 function get3rdCar(inventory) {
-  const the3rd = inventory.find((item, index) => {
-    return index === 2; // we use 2 because index is zero-based.
-  });
-  return `The car is a ${the3rd.car_make} ${the3rd.car_model}`;
+  for (var i = 0; i < inventory.length; i++) {
+    if (inventory[i].id === 3) {
+      return `The car is a ${inventory[i].car_make} ${inventory[i].car_model}`;
+    }
+  }
 }
 
 // 👇 COMPLETE YOUR WORK BELOW 👇
@@ -140,10 +141,8 @@ function get3rdCar(inventory) {
 
 function getCarInfoByIndex(inventory, index) {
   for (var i = 0; i < inventory.length; i++) {
-    if (i === index)
+    if (i === index) {
       return `This is a ${inventory[i].car_make} ${inventory[i].car_model}`;
-    else {
-      return null;
     }
   }
 }
