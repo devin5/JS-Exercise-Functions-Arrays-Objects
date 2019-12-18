@@ -144,6 +144,7 @@ function getCarInfoByIndex(inventory, index) {
     if (i === index) {
       return `This is a ${inventory[i].car_make} ${inventory[i].car_model}`;
     }
+    
   }
 }
 
